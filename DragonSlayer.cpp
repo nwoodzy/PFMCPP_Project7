@@ -1,7 +1,10 @@
 #include "DragonSlayer.h"
 #include "Dragon.h"
+#include "DefensiveItem.cpp"
 
 //DragonSlayer::DragonSlayer
+DragonSlayer::DragonSlayer( std::string name_, int hitPoints, int armor_  ) : Character( hitPoints, armor_, 10 ) {};
+
 
 //DragonSlayer::getName
 
