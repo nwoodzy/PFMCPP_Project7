@@ -1,6 +1,7 @@
 #include "DragonSlayer.h"
 #include "Dragon.h"
 #include "DefensiveItem.cpp"
+#include "Utility.h"
 
 //DragonSlayer::DragonSlayer
 DragonSlayer::DragonSlayer( std::string name_, int hitPoints, int armor_  ) : Character( hitPoints, armor_, 10 ) {};
@@ -30,3 +31,8 @@ void DragonSlayer::attack(Character& other)
 }
 
 //DragonSlayer::getStats
+
+std::string DragonSlayer::getStats()
+{
+    return getCharacterStats(this);
+}
