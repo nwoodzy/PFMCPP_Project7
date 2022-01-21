@@ -1,5 +1,6 @@
 #pragma once
 #include "Character.h"
+#include "AttackItem.h"
 
 struct DragonSlayer : Character
 {
