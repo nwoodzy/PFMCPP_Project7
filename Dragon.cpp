@@ -3,7 +3,7 @@
 #include "Utility.h"
 
 //Dragon::Dragon
-Dragon::Dragon ( std::string name_, int hitPoints, int armor_ ) : Character ( hitPoints, armor_, 80 ), name(name_) {};
+Dragon::Dragon ( std::string name_, int hitPoints, int armor_ ) : Character ( hitPoints, armor_, 80 ), name(name_) {}
 
 void Dragon::attack(Character &other)
 {

@@ -86,13 +86,14 @@ int Character::takeDamage(int damage)
     return hitPoints;
 }
 
-void updateStats( int stat, int initialStat )
+void updateStats( int& stat, int& initialStat )
 {
     if (stat < initialStat)
     {
         stat = initialStat;
     }
-    stat = stat * 1.1;
+    stat += stat * 0.1f;
+    initialStat = stat;
 }
 
 #include <cassert>

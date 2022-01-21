@@ -7,7 +7,7 @@ DragonSlayer::DragonSlayer( std::string name_, int hitPoints, int armor_  ) : Ch
 {
     helpfulItems = makeHelpfulItems(2);
     defensiveItems = makeDefensiveItems(1);
-};
+}
 
 
 //DragonSlayer::getName
