@@ -4,7 +4,7 @@
 #include "Utility.h"
 
 //DragonSlayer::DragonSlayer
-DragonSlayer::DragonSlayer( std::string name_, int hitPoints, int armor_  ) : Character( hitPoints, armor_, 4 ) {};
+DragonSlayer::DragonSlayer( std::string name_, int hitPoints, int armor_  ) : Character( hitPoints, armor_, 4 ), name( name_ ) {};
 
 
 //DragonSlayer::getName

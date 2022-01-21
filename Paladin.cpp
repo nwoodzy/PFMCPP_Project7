@@ -2,7 +2,7 @@
 #include "Utility.h"
 
 // Paladin::Paladin
-Paladin::Paladin( std::string name, int hitPoints, int armor_ ) : Character( hitPoints, armor_, 10 ){};
+Paladin::Paladin( std::string name_, int hitPoints, int armor_ ) : Character( hitPoints, armor_, 10 ), name( name_ ) {};
 // Paladin::getName
 const std::string& Paladin::getName()
 {
