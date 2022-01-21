@@ -1,7 +1,7 @@
 #include "AttackItem.h"
 #include "Utility.h"
 
-struct AttackItem::AttackItem() : Item("attack item", 3){}
+AttackItem::AttackItem() : Item("attack item", 5){}
     
 void AttackItem::use(Character* character)
 {

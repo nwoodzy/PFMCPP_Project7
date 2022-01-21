@@ -1,6 +1,5 @@
 #include "DragonSlayer.h"
 #include "Dragon.h"
-#include "DefensiveItem.cpp"
 #include "Utility.h"
 
 //DragonSlayer::DragonSlayer
@@ -22,6 +21,8 @@ void DragonSlayer::attack(Character& other)
     std::cout << name << " is attacking " << other.getName() << " !!" << std::endl;
     if( auto* dragon = dynamic_cast<Dragon*>(&other) )
     {
+        attackItem->use(this);
+        attackItem.reset();
         //assert(false);
         //DragonSlayers get a 10x boost when attacking dragons, from their attack item.
         //so they should USE their attack item before attacking the dragon... 
