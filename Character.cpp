@@ -10,9 +10,9 @@ Character::Character(int hp, int armor_, int attackDamage_ ) :
     armor(armor_),
     attackDamage(attackDamage_)
 {
-    initialHitPoints.reset( new int(hitPoints) );
+    initialHitPoints.reset( new int( hitPoints ) );
     initialArmorLevel.reset( new int( armor) );
-    initialAttackDamage.reset( new int( attackDamage) );
+    initialAttackDamage.reset( new int( attackDamage ) );
 }
 
 void Character::attack( Character& other )
@@ -86,17 +86,8 @@ int Character::takeDamage(int damage)
     return hitPoints;
 }
 
-void updateStats( int& stat, int& initialStat )
-{
-    if (stat < initialStat)
-    {
-        stat = initialStat;
-    }
-    stat += stat * 0.1f;
-    initialStat = stat;
-}
 
-#include <cassert>
+//#include <cassert>
 void Character::attackInternal(Character& other)
 {
     if( other.hitPoints <= 0 )
@@ -109,7 +100,7 @@ void Character::attackInternal(Character& other)
       */
         updateStats( hitPoints, *initialHitPoints );
         updateStats( armor, *initialArmorLevel );
-        updateStats( hitPoints, *initialAttackDamage );
+        updateStats( attackDamage, *initialAttackDamage );
         //assert(false);
         std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;        
     }
@@ -118,7 +109,7 @@ void Character::attackInternal(Character& other)
 void Character::printStats()
 {
     std::cout << getName() << "'s stats: " << std::endl;
-    assert(false);
+    //assert(false);
     /*
     make your getStats() use a function from the Utility.h
     */
@@ -126,4 +117,14 @@ void Character::printStats()
     
     std::cout << std::endl;
     std::cout << std::endl;
+}
+
+void updateStats( int& stat, int& initialStat )
+{
+    if (stat < initialStat)
+    {
+        stat = initialStat;
+    }
+    stat += stat * 0.1f;
+    initialStat = stat;
 }
