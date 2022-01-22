@@ -49,16 +49,16 @@ void useDefensiveItem(Character* character, Item& item)
     //dwarves, paladins, and DragonSlayers get extra boosts from defensive item.
     if( auto* dwa = dynamic_cast<Dwarf*>(character) )
     {
-        dwa->boostArmor( item.getBoost() * 1.1 );
+        dwa->boostArmor( item.getBoost() * 1.1f );
     }
     else if( auto* pal = dynamic_cast<Paladin*>(character) )
     {
         //same with paladins
-        pal->boostArmor( item.getBoost() * 1.3 );
+        pal->boostArmor( item.getBoost() * 1.3f );
     }
     else if( auto* draS = dynamic_cast<DragonSlayer*>(character))
     {
-        draS->boostArmor( item.getBoost() * 1.5 );
+        draS->boostArmor( item.getBoost() * 1.5f );
     }
     else if( auto* ch = dynamic_cast<Dragon*>(character) )
     {
@@ -73,11 +73,11 @@ void useHelpfulItem(Character* character, Item* item)
     }
     else if( auto* pal = dynamic_cast<Paladin*>(character) )
     {
-        pal->boostHitPoints(item->getBoost() * 1.5);
+        pal->boostHitPoints(item->getBoost() * 1.5f);
     }
     else if( auto* draS = dynamic_cast<DragonSlayer*>(character))
     {
-        draS->boostHitPoints(item->getBoost() * 1.25);
+        draS->boostHitPoints(item->getBoost() * 1.25f);
     }
     else if( auto* ch = dynamic_cast<Dragon*>(character) )
     {
@@ -88,11 +88,11 @@ void useAttackItem(Character* character, Item* item)
 {
     if( auto* dwa = dynamic_cast<Dwarf*>(character) )
     {
-        dwa->boostAttackDamage(item->getBoost() * 1.5);
+        dwa->boostAttackDamage(item->getBoost() * 1.5f);
     }
     else if( auto* pal = dynamic_cast<Paladin*>(character) )
     {
-        pal->boostAttackDamage(item->getBoost() * 1.33);
+        pal->boostAttackDamage(item->getBoost() * 1.33f);
     }
     else if( auto* draS = dynamic_cast<DragonSlayer*>(character))
     {
@@ -101,6 +101,7 @@ void useAttackItem(Character* character, Item* item)
         //so their attack item should boost their attack damage by a factor of 10
         //this means you need to GET the attack damage, multiply it by the item's boost, and BOOST the attackDamage with that multiplied value.  
         //check Character.h for available member functions you can use.
+        draS->boostAttackDamage( draS->getAttackDamage()*item->getBoost() );
     }
     else if( auto* ch = dynamic_cast<Dragon*>(character) )
     {
